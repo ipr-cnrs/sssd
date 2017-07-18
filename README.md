@@ -67,9 +67,10 @@ This role will :
 ## Author Information
 
 Jérémy Gardais
-* Source : …
+* Source : [on IPR's Gogs][sssd source]
 * [IPR][ipr website] (Institut de Physique de Rennes)
 
+[sssd source]: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.sssd
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
 [lae sssd galaxy]: https://galaxy.ansible.com/lae/system_ldap/

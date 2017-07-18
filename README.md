@@ -37,7 +37,7 @@ Please see default value by Operating System file in `vars/` directory.
 ``` yml
 - hosts: serverXYZ
   roles:
-    - role: ipr.sssd
+    - role: ipr-cnrs.sssd
 ```
 
 * With a `group_vars/serverxyz.yml` file :

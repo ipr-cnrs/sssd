@@ -1,5 +1,5 @@
 ---
-# Handlers file for ipr.sssd
+# Handlers file for ipr-cnrs.sssd
 - name: restart sssd
   service:
     name: '{{ sssd_service_name }}'

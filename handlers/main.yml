@@ -1,0 +1,6 @@
+---
+# Handlers file for ipr.sssd
+- name: restart sssd
+  service:
+    name: '{{ sssd_service_name }}'
+    state: restarted

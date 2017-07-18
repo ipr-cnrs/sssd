@@ -1,0 +1,53 @@
+---
+# tasks file for ansible-role-sssd
+
+- name: Load specific OS vars
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution|lower }}-{{ ansible_distribution_version }}.yml"
+    - "{{ ansible_distribution|lower }}.yml"
+    - "{{ ansible_os_family|lower }}.yml"
+
+# Packages
+- name: Install sssd
+  package:
+    name: "{{ item }}"
+    state: "{{ sssd_pkg_state }}"
+  with_items: "{{ sssd_pkg_list }}"
+
+# Configuration file
+- name: CONFIG sssd.conf
+  template:
+    src: "{{ sssd_main_conf_tpl }}"
+    dest: "{{ sssd_main_conf_path }}"
+    mode: 0600
+    owner: root
+    group: root
+    backup: true
+  when: sssd_conf_manage
+  notify:
+    - restart sssd
+
+- name: "CONFIG conf.d/{{ sssd_domain }}.conf"
+  blockinfile:
+    state: present
+    create: yes
+    mode: 0600
+    owner: root
+    group: root
+    insertbefore: BOF
+    dest: "/etc/sssd/conf.d/{{ sssd_domain }}.conf"
+    content: |
+      [domain/{{ sssd_domain }}]
+      #ldap_default_authtok = password for {{ sssd_bind_dn }} after END BLOCK
+  when: sssd_conf_manage
+  notify:
+    - restart sssd
+
+- name: Ensure home directories are created upon login with pam
+  lineinfile:
+    dest: /etc/pam.d/common-account
+    regexp: 'pam_mkhomedir\.so'
+    line: "session	required			pam_mkhomedir.so	umask=0022	skel=/etc/skel/	silent"
+    state: present
+  when: sssd_mkhomedir

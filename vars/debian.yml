@@ -1,0 +1,4 @@
+---
+# vars file for Debian-based distros
+sssd_pkg_list:
+  - sssd

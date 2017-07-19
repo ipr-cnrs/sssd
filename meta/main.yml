@@ -1,6 +1,6 @@
 galaxy_info:
   author: "Jérémy Gardais"
-  description: "Manage LDAP authentication with **SSSD** (System Security Services Daemon)."
+  description: "Manage LDAP authentication with SSSD (System Security Services Daemon)."
   license: WTFPL
   company: IPR
   issue_tracker_url: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.sssd/issues

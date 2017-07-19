@@ -5,6 +5,7 @@
      * [OS Specific Variables](#os-specific-variables)
 3. [Example Playbook](#example-playbook)
 4. [Configuration](#configuration)
+5. [Development](#development)
 5. [License](#license)
 6. [Author Information](#author-information)
 
@@ -26,7 +27,7 @@ Highly inspired by [Lae's system_ldap role][lae sssd galaxy] with minors updates
 
 ### OS Specific Variables
 
-Please see default value by Operating System file in `vars/` directory.
+Please see default value by Operating System file in [vars][vars directory] directory.
 
 * **sssd_pkg_list** : The list of packages to install to provide `sssd`.
 
@@ -60,6 +61,14 @@ This role will :
 * Create an additionnal configuration file to only store the bind_password (`/etc/sssd/conf.d/domain.bind.conf`).
 * Manage `sssd` service.
 
+## Development
+
+This source code comes from our [Gogs instance][sssd source] and the [Github repo][sssd github] exist just to be able to send the role to Ansible Galaxy…
+
+But feel free to send issue/PR here :)
+
+Thanks to this [hook][gogs to github hook], Github automatically got updates from our [Gogs instance][sssd source] :)
+
 ## License
 
 [WTFPL][wtfpl website]
@@ -70,7 +79,10 @@ Jérémy Gardais
 * Source : [on IPR's Gogs][sssd source]
 * [IPR][ipr website] (Institut de Physique de Rennes)
 
+[vars directory]: ./vars
+[gogs to github hook]: https://stackoverflow.com/a/21998477
 [sssd source]: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.sssd
+[sssd github]: https://github.com/ipr-cnrs/sssd
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
 [lae sssd galaxy]: https://galaxy.ansible.com/lae/system_ldap/

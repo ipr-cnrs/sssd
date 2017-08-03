@@ -8,7 +8,7 @@ sssd_conf_manage: true
 sssd_main_conf_path: '/etc/sssd/sssd.conf'
 sssd_main_conf_tpl: 'etc/sssd/sssd.conf.j2'
 sssd_mkhomedir: true
-sssd_home_path: '/home/'
+sssd_home_path: '/home'
 
 # LDAP info
 sssd_domain: ''

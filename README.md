@@ -23,6 +23,7 @@ Highly inspired by [Lae's system_ldap role][lae sssd galaxy] with minors updates
 * **sssd_main_conf_tpl** : Template used to generate the previous config file [default : `etc/sssd/sssd.conf.j2`].
 * **sssd_mkhomedir** : If home directories should be created at login [default : `true`].
 * **sssd_home_path** : Path where home directories are stored [default : `/home`].
+* **sssd_sudoers_ldap** : If sudo must look to `sss` the list of sudoers [default : `false`].
 * **sssd_service_name** : SSSD's service name [default : `sssd`].
 
 ### OS Specific Variables
@@ -59,6 +60,7 @@ This role will :
 * Install needed packages to provide `sssd`.
 * Manage the default `sssd` configuration file (`/etc/sssd/sssd.conf`).
 * Create an additionnal configuration file to only store the bind_password (`/etc/sssd/conf.d/domain.bind.conf`).
+* Remove `sss` directive for `sudoers` in `/etc/nsswitch.conf` file.
 * Manage `sssd` service.
 
 ## Development

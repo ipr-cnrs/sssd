@@ -15,6 +15,14 @@
     state: "{{ sssd_pkg_state }}"
   with_items: "{{ sssd_pkg_list }}"
 
+# Update nsswitch.conf
+- name: CONFIG sudoers nsswitch.conf
+  lineinfile:
+    dest: /etc/nsswitch.conf
+    regexp: '^sudoers:.*sss'
+    line: 'sudoers:        files'
+  when: not sssd_sudoers_ldap
+
 # Configuration file
 - name: CONFIG sssd.conf
   template:

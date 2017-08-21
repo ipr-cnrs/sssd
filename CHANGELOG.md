@@ -1,4 +1,9 @@
 
+## v1.1.1
+
+### Fix
+* Remove `sss` directive for `sudoers` in `/etc/nsswitch.conf` file (#1).
+
 ## v1.1
 
 ### Fix

@@ -31,6 +31,7 @@ Highly inspired by [Lae's system_ldap role][lae sssd galaxy] with minors updates
 Please see default value by Operating System file in [vars][vars directory] directory.
 
 * **sssd_pkg_list** : The list of packages to install to provide `sssd`.
+  * Be careful, `sssd` may need additional packages to be able to establish a TLS connection to a LDAP/AD/… server (such as `ca-certificates`,…).
 
 ## Example Playbook
 
@@ -59,7 +60,7 @@ sssd_bind_dn: 'cn=sssd_user,ou=apps,dc=domain,dc=tld'
 This role will :
 * Install needed packages to provide `sssd`.
 * Manage the default `sssd` configuration file (`/etc/sssd/sssd.conf`).
-* Create an additionnal configuration file to only store the bind_password (`/etc/sssd/conf.d/domain.bind.conf`).
+* Create an additional configuration file to only store the bind_password (`/etc/sssd/conf.d/domain.bind.conf`).
 * Remove `sss` directive for `sudoers` in `/etc/nsswitch.conf` file.
 * Manage `sssd` service.
 

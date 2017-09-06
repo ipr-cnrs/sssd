@@ -1,4 +1,9 @@
 
+## v1.1.x
+
+### Fix
+* For Debian Stretch ensure to also install `ca-certificates` (fix #2).
+
 ## v1.1.1
 
 ### Fix

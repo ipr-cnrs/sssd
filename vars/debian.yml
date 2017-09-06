@@ -1,4 +1,5 @@
 ---
 # vars file for Debian-based distros
 sssd_pkg_list:
+  - ca-certificates
   - sssd

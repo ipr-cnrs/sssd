@@ -19,8 +19,12 @@
 - name: CONFIG sudoers nsswitch.conf
   lineinfile:
     dest: /etc/nsswitch.conf
-    regexp: '^sudoers:.*sss'
+    state: present
+    regexp: '^sudoers:'
     line: 'sudoers:        files'
+    owner: root
+    group: root
+    mode: 0644
   when: not sssd_sudoers_ldap
 
 # Configuration file

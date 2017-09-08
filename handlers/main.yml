@@ -4,3 +4,8 @@
   service:
     name: '{{ sssd_service_name }}'
     state: restarted
+
+- name: restart logind
+  service:
+    name: systemd-logind
+    state: restarted

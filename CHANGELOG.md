@@ -4,6 +4,7 @@
 ### Fix
 * For Debian Stretch ensure to also install `ca-certificates` (fix #2).
 * Ensure to add only one time the sudoers line in `/etc/nsswitch.conf` file (fix #3).
+* Ensure to restart `systemd-logind` to avoid 'Failed to create session' error (fix #4).
 
 ## v1.1.1
 

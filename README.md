@@ -63,6 +63,7 @@ This role will :
 * Create an additional configuration file to only store the bind_password (`/etc/sssd/conf.d/domain.bind.conf`).
 * Remove `sss` directive for `sudoers` in `/etc/nsswitch.conf` file.
 * Manage `sssd` service.
+* Restart `systemd-logind` service.
 
 ## Development
 

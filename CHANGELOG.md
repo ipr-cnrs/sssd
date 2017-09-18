@@ -1,4 +1,9 @@
 
+## v1.1.3
+
+### Enhancement
+* `sssd_bind_password` is now used and can be directly set on a remote host.
+
 ## v1.1.2
 
 ### Fix

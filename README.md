@@ -53,7 +53,7 @@ sssd_search_base: 'ou=People,dc=domain,dc=tld
 sssd_bind_dn: 'cn=sssd_user,ou=apps,dc=domain,dc=tld'
 ```
 
-  * Then you also need to enter the `bind_dn_password` on the remote host (`/etc/sssd/conf.d/sssd_domain.conf`|`/etc/sssd/conf.d/dotld.conf`).
+  * Then you also need to enter the `bind_dn_password` on the remote host (`/etc/sssd/conf.d/sssd_domain.conf`|`/etc/sssd/conf.d/dotld.conf`). If you want to define `bind_dn_password` in a playbook, please be sure to use [Vault][ansible vault] (or any other tool) to cipher your data !
 
 ## Configuration
 
@@ -84,6 +84,7 @@ Jérémy Gardais
 * [IPR][ipr website] (Institut de Physique de Rennes)
 
 [vars directory]: ./vars
+[ansible vault]: http://docs.ansible.com/ansible/latest/vault.html
 [gogs to github hook]: https://stackoverflow.com/a/21998477
 [sssd source]: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.sssd
 [sssd github]: https://github.com/ipr-cnrs/sssd

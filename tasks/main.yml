@@ -53,6 +53,7 @@
     content: |
       [domain/{{ sssd_domain }}]
       #ldap_default_authtok = password for {{ sssd_bind_dn }} after END BLOCK
+      {% if sssd_bind_password %} ldap_default_authtok = {{ sssd_bind_password }}{% endif %}
   when: sssd_conf_manage
   notify:
     - restart sssd

@@ -66,3 +66,6 @@
     line: "session	required			pam_mkhomedir.so	umask=0022	skel=/etc/skel/	silent"
     state: present
   when: sssd_mkhomedir
+
+- meta: flush_handlers
+  when: sssd_flush_handlers

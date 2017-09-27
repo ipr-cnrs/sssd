@@ -22,3 +22,4 @@ sssd_bind_password: ''
 
 # Service
 sssd_service_name: 'sssd'
+sssd_flush_handlers: False

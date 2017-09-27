@@ -25,6 +25,7 @@ Highly inspired by [Lae's system_ldap role][lae sssd galaxy] with minors updates
 * **sssd_home_path** : Path where home directories are stored [default : `/home`].
 * **sssd_sudoers_ldap** : If sudo must look to `sss` the list of sudoers [default : `false`].
 * **sssd_service_name** : SSSD's service name [default : `sssd`].
+* **sssd_flush_handlers** : If handlers need to be applied at the end of the role [default : `False`].
 
 ### OS Specific Variables
 
@@ -54,6 +55,12 @@ sssd_bind_dn: 'cn=sssd_user,ou=apps,dc=domain,dc=tld'
 ```
 
   * Then you also need to enter the `bind_dn_password` on the remote host (`/etc/sssd/conf.d/sssd_domain.conf`|`/etc/sssd/conf.d/dotld.conf`). If you want to define `bind_dn_password` in a playbook, please be sure to use [Vault][ansible vault] (or any other tool) to cipher your data !
+
+* If you have some other role that need a working sssd configuration, you may want to apply the new configuration :
+
+``` yml
+sssd_flush_handlers: True
+```
 
 ## Configuration
 

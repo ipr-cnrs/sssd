@@ -1,5 +1,5 @@
 
-## v1.1.x
+## v1.1.4
 
 ### Enhancement
 * Add the possibility to flush the handlers to apply the new configuration.

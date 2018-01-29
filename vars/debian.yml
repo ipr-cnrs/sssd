@@ -3,3 +3,5 @@
 sssd_pkg_list:
   - ca-certificates
   - sssd
+  - libpam-sss
+  - libnss-sss

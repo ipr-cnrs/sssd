@@ -4,6 +4,9 @@
 ### Enhancement
 * nsswitch.conf is modified only is `sssd_nsswitch_manage` is set (fix #5).
 
+### Fix
+* Add `libpam-sss` and `libnss-sss` libraries for Debian (fix #6).
+
 ## v1.1.4
 
 ### Enhancement

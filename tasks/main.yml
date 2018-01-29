@@ -25,7 +25,7 @@
     owner: root
     group: root
     mode: 0644
-  when: not sssd_sudoers_ldap
+  when: not sssd_sudoers_ldap and sssd_nsswitch_manage
 
 # Configuration file
 - name: CONFIG sssd.conf

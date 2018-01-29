@@ -1,4 +1,9 @@
 
+## v1.2
+
+### Enhancement
+* nsswitch.conf is modified only is `sssd_nsswitch_manage` is set (fix #5).
+
 ## v1.1.4
 
 ### Enhancement

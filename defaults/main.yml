@@ -20,6 +20,9 @@ sssd_search_base: ''
 sssd_bind_dn: ''
 sssd_bind_password: ''
 
+# nsswitch configuration
+sssd_nsswitch_manage: false
+
 # Service
 sssd_service_name: 'sssd'
 sssd_flush_handlers: False

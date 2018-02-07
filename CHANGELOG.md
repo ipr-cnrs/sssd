@@ -1,4 +1,9 @@
 
+## v1.2.1
+
+### Enhancement
+* Allow to override shell attribute.
+
 ## v1.2
 
 ### Enhancement

@@ -9,6 +9,8 @@ sssd_main_conf_path: '/etc/sssd/sssd.conf'
 sssd_main_conf_tpl: 'etc/sssd/sssd.conf.j2'
 sssd_mkhomedir: true
 sssd_home_path: '/home'
+sssd_shell: '/bin/bash'
+sssd_shell_override: False
 
 sssd_sudoers_ldap: false
 

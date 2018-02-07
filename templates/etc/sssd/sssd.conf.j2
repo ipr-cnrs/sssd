@@ -34,6 +34,9 @@ entry_cache_timeout = 5400
 
 {# mapping/attribute configuration #}
 override_homedir = {{ sssd_home_path }}/%u
+{% if sssd_shell_override %}
+override_shell = {{ sssd_shell }}
+{% endif %}
 
 krb5_realm = #
 

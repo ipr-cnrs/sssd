@@ -8,12 +8,19 @@
     - "{{ ansible_distribution|lower }}.yml"
     - "{{ ansible_os_family|lower }}.yml"
 
-# Packages
+# Packages [[[
 - name: Install sssd
   package:
     name: "{{ item }}"
     state: "{{ sssd_pkg_state }}"
   with_items: "{{ sssd_pkg_list }}"
+
+- name: Remove unwanted packages
+  package:
+    name: "{{ item }}"
+    state: "{{ sssd__unwanted_packages_state }}"
+  with_items: "{{ sssd__unwanted_packages_list }}"
+# ]]]
 
 # Update nsswitch.conf
 - name: CONFIG sudoers nsswitch.conf

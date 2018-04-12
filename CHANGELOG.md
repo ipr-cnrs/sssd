@@ -1,4 +1,9 @@
 
+## v1.x
+
+### Enhancement
+* Remove unwanted packages.
+
 ## v1.2.1
 
 ### Enhancement

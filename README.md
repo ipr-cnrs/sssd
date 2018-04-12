@@ -18,6 +18,7 @@ Highly inspired by [Lae's system_ldap role][lae sssd galaxy] with minors updates
 ## Role Variables
 
 * **sssd_pkg_state** : State of new sssd packages [default : `latest`].
+* **sssd__unwanted_packages_state** : State of unwanted packages that might interfer with SSSD [default : `absent`].
 * **sssd_conf_manage** : If SSSD configuration should be managed with this role [default : `true`].
 * **sssd_main_conf_path** : Path to set main SSSD's configuration [default : `/etc/sssd/sssd.conf`].
 * **sssd_main_conf_tpl** : Template used to generate the previous config file [default : `etc/sssd/sssd.conf.j2`].
@@ -36,6 +37,7 @@ Please see default value by Operating System file in [vars][vars directory] dire
 
 * **sssd_pkg_list** : The list of packages to install to provide `sssd`.
   * Be careful, `sssd` may need additional packages to be able to establish a TLS connection to a LDAP/AD/… server (such as `ca-certificates`,…).
+* **sssd__unwanted_packages_list** : The list of packages to remove.
 
 ## Example Playbook
 
@@ -69,6 +71,7 @@ sssd_flush_handlers: True
 
 This role will :
 * Install needed packages to provide `sssd`.
+* Remove packages that might interfer with `sssd` for authentication.
 * Manage the default `sssd` configuration file (`/etc/sssd/sssd.conf`).
 * Create an additional configuration file to only store the bind_password (`/etc/sssd/conf.d/domain.bind.conf`).
 * Remove `sss` directive for `sudoers` in `/etc/nsswitch.conf` file if `sssd_nsswitch_manage` is set.

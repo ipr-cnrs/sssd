@@ -3,6 +3,8 @@
 # Package
 sssd_pkg_state: 'latest'
 
+sssd__unwanted_packages_state: 'absent'
+
 # Configuration
 sssd_conf_manage: true
 sssd_main_conf_path: '/etc/sssd/sssd.conf'

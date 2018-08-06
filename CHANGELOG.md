@@ -1,8 +1,11 @@
 
-## v1.x
+## v1.2.2
 
 ### Enhancement
 * Remove unwanted packages.
+
+### Fix
+* Set empty dependencies line to fix Galaxy warning.
 
 ## v1.2.1
 

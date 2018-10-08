@@ -22,7 +22,7 @@ ldap_tls_reqcert = never
 ldap_search_base = {{ sssd_search_base }}
 ldap_default_bind_dn = {{ sssd_bind_dn }}
 ldap_default_authtok_type = password
-#ldap_default_authtok = ... # See conf.d/default.bind.conf
+#ldap_default_authtok = ... # See conf.d/{{ sssd_domain }}.conf
 cache_credentials = True
 entry_cache_timeout = 5400
 

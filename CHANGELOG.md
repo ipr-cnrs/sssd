@@ -1,4 +1,9 @@
 
+## v1.X.Y
+
+### Minor changes
+* Give the correct path in comment to see ldap_default_authtok value.
+
 ## v1.2.2
 
 ### Enhancement

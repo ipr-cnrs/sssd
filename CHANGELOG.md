@@ -3,6 +3,7 @@
 
 ### Minor changes
 * Give the correct path in comment to see ldap_default_authtok value.
+* Use to_nice_json to manage packages list.
 
 ## v1.2.2
 

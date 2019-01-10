@@ -13,13 +13,15 @@
   package:
     name: "{{ item }}"
     state: "{{ sssd_pkg_state }}"
-  with_items: "{{ sssd_pkg_list }}"
+  with_flattened:
+    - '{{ sssd_pkg_list | to_nice_json }}'
 
 - name: Remove unwanted packages
   package:
     name: "{{ item }}"
     state: "{{ sssd__unwanted_packages_state }}"
-  with_items: "{{ sssd__unwanted_packages_list }}"
+  with_flattened:
+    - '{{ sssd__unwanted_packages_list | to_nice_json }}'
 # ]]]
 
 # Update nsswitch.conf

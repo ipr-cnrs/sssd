@@ -76,7 +76,7 @@
   lineinfile:
     dest: /etc/pam.d/common-account
     regexp: 'pam_mkhomedir\.so'
-    line: "session	required			pam_mkhomedir.so	umask=0022	skel=/etc/skel/	silent"
+    line: "session required                        pam_mkhomedir.so        umask=0022      skel=/etc/skel/ silent"
     state: present
   when: sssd_mkhomedir
 

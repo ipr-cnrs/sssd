@@ -3,6 +3,7 @@
 
 ### Enhancements
 * Fix E405 Remote package tasks should have a retry.
+* Fix E203 Most files should not contain tabs.
 
 ## v1.3.0
 

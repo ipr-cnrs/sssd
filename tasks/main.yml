@@ -76,5 +76,5 @@
     state: present
   when: sssd_mkhomedir
 
-- meta: flush_handlers
-  when: sssd_flush_handlers
+- name: Flush handlers to be able to use SSSD authentication
+  meta: flush_handlers

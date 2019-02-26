@@ -4,6 +4,7 @@
 ### Minor changes
 * Give the correct path in comment to see ldap_default_authtok value.
 * Use to_nice_json to manage packages list.
+* flush_handlers don't support when statement.
 
 ## v1.2.2
 

@@ -8,11 +8,12 @@ galaxy_info:
   license: WTFPL
   company: IPR
   issue_tracker_url: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.sssd/issues
-  min_ansible_version: 2.2
+  min_ansible_version: 2.7
   platforms:
   - name: Debian
     versions:
     - stretch
+    - buster
   galaxy_tags:
     - system
     - authentication

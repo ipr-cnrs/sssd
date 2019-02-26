@@ -1,10 +1,11 @@
 
-## v1.X.Y
+## v1.3.0
 
 ### Minor changes
 * Give the correct path in comment to see ldap_default_authtok value.
 * Use to_nice_json to manage packages list.
 * flush_handlers don't support when statement.
+* Works on Debian Buster.
 
 ## v1.2.2
 

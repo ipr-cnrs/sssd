@@ -15,6 +15,8 @@
     state: "{{ sssd_pkg_state }}"
   with_flattened:
     - '{{ sssd_pkg_list | to_nice_json }}'
+  register: sssd_pkg_result
+  until: sssd_pkg_result is success
 
 - name: Remove unwanted packages
   package:
@@ -22,6 +24,8 @@
     state: "{{ sssd__unwanted_packages_state }}"
   with_flattened:
     - '{{ sssd__unwanted_packages_list | to_nice_json }}'
+  register: sssd_remove_result
+  until: sssd_remove_result is success
 # ]]]
 
 # Update nsswitch.conf

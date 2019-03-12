@@ -17,6 +17,7 @@ Highly inspired by [Lae's system_ldap role][lae sssd galaxy] with minors updates
 
 ## Role Variables
 
+* **sssd__deploy_state**: The desired state this role should achieve [default : `present`].
 * **sssd_pkg_state** : State of new sssd packages [default : `latest`].
 * **sssd__unwanted_packages_state** : State of unwanted packages that might interfer with SSSD [default : `absent`].
 * **sssd_conf_manage** : If SSSD configuration should be managed with this role [default : `true`].

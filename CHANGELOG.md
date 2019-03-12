@@ -1,3 +1,8 @@
+## v1.X
+
+### Enhancements
+
+* Add a var to disable the role.
 
 ## v1.3.1
 

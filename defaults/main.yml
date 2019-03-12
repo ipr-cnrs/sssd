@@ -1,9 +1,59 @@
 ---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
-# Package
+# ipr-cnrs.netdata default variables [[[
+# ======================================
+
+# Packages and installation [[[
+# -----------------------------
+
+# .. envvar:: sssd_pkg_state [[[
+#
+# State of the packages to install. Possible options :
+#
+# ``latest``
+#   Default. Ensure those packages are in the latest state.
+#
+# ``absent``
+#   Default. Ensure to remove those packages.
+#
+# ``present``
+#   Ensure to install those packages.
+#
 sssd_pkg_state: 'latest'
-
+                                                                       # ]]]
+# .. envvar:: sssd__unwanted_packages_state [[[
+#
+# State of the unwanted packages. Possible options :
+#
+# ``absent``
+#   Default. Ensure to remove those packages.
+#
+# ``present``
+#   Ensure to install those packages.
+#
+# ``latest``
+#   Ensure those packages are in the latest state.
+#
+# ``Anything else``
+#   The packages will not be touch.
+#
 sssd__unwanted_packages_state: 'absent'
+                                                                       # ]]]
+# .. envvar:: sssd__deploy_state [[[
+#
+# What is the desired state which this role should achieve ? Possible options :
+#
+# ``present``
+#   Default. Ensure that sssd is installed and configured as requested.
+#
+# ``absent``
+#   TODO: Ensure that sssd is uninstalled and it's configuration is removed.
+#
+sssd__deploy_state: 'present'
+                                                                   # ]]]
+                                                                   # ]]]
+
 
 # Configuration
 sssd_conf_manage: true

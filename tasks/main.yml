@@ -1,6 +1,9 @@
 ---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
 # tasks file for ansible-role-sssd
 
+# Load vars [[[1
 - name: Load specific OS vars
   include_vars: "{{ item }}"
   with_first_found:
@@ -8,15 +11,16 @@
     - "{{ ansible_distribution|lower }}.yml"
     - "{{ ansible_os_family|lower }}.yml"
 
-# Packages [[[
+# Manage packages [[[1
 - name: Install sssd
   package:
     name: "{{ item }}"
-    state: "{{ sssd_pkg_state }}"
+    state: 'present'
   with_flattened:
     - '{{ sssd_pkg_list | to_nice_json }}'
   register: sssd_pkg_result
   until: sssd_pkg_result is success
+  when: (sssd__deploy_state == "present")
 
 - name: Remove unwanted packages
   package:
@@ -26,9 +30,10 @@
     - '{{ sssd__unwanted_packages_list | to_nice_json }}'
   register: sssd_remove_result
   until: sssd_remove_result is success
-# ]]]
+  when: (sssd__deploy_state == "present")
 
-# Update nsswitch.conf
+# Manage configuration [[[1
+## Update nsswitch.conf
 - name: CONFIG sudoers nsswitch.conf
   lineinfile:
     dest: /etc/nsswitch.conf
@@ -38,7 +43,7 @@
     owner: root
     group: root
     mode: 0644
-  when: not sssd_sudoers_ldap and sssd_nsswitch_manage
+  when: (sssd__deploy_state == "present") and (not sssd_sudoers_ldap and sssd_nsswitch_manage)
 
 # Configuration file
 - name: CONFIG sssd.conf
@@ -49,7 +54,7 @@
     owner: root
     group: root
     backup: true
-  when: sssd_conf_manage
+  when: (sssd__deploy_state == "present") and (sssd_conf_manage)
   notify:
     - restart sssd
     - restart logind
@@ -67,7 +72,7 @@
       [domain/{{ sssd_domain }}]
       #ldap_default_authtok = password for {{ sssd_bind_dn }} after END BLOCK
       {% if sssd_bind_password %}ldap_default_authtok = {{ sssd_bind_password }}{% endif %}
-  when: sssd_conf_manage
+  when: (sssd__deploy_state == "present") and (sssd_conf_manage)
   notify:
     - restart sssd
     - restart logind
@@ -78,7 +83,7 @@
     regexp: 'pam_mkhomedir\.so'
     line: "session required                        pam_mkhomedir.so        umask=0022      skel=/etc/skel/ silent"
     state: present
-  when: sssd_mkhomedir
+  when: (sssd__deploy_state == "present") and (sssd_mkhomedir)
 
 - name: Flush handlers to be able to use SSSD authentication
   meta: flush_handlers

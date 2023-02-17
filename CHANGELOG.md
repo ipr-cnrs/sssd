@@ -1,8 +1,11 @@
-## v1.X
+## v1.3.2
 
 ### Enhancements
 
 * Add a var to disable the role.
+
+### Fix
+* Use flatten to manage packages list.
 
 ## v1.3.1
 

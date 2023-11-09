@@ -100,7 +100,7 @@ Jérémy Gardais
 [vars directory]: ./vars
 [ansible vault]: http://docs.ansible.com/ansible/latest/vault.html
 [gogs to github hook]: https://stackoverflow.com/a/21998477
-[sssd source]: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.sssd
+[sssd source]: https://git.ipr.univ-rennes.fr/cellinfo/ansible.sssd
 [sssd github]: https://github.com/ipr-cnrs/sssd
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
